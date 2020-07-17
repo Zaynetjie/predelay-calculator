@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Delay Calculator</title>
+    <style>
+        /* places all elements in the center of the viewport */
+        html, body {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            margin: 0 auto;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(12, 12, 11, 0.726);
+        }     
+        /* bootstrap like card styles */
+        .container {
+            color: white;
+            padding: 30px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            border: rgba(44, 44, 44, 0.075) 1px solid;
+            background-color: rgba(0, 0, 0, 0.11);
+            box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.274);
+        }   
+        /* simple yellow button */
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(26, 26, 26);
+            border: none;
+            padding: 5px 20px;
+            background-color: rgb(255, 217, 47);
+            border-radius: 3px;
+            margin-left: 30px;
+            box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.082);
+            transition: ease 0.45s;
+            transition-timing-function: linear;
+        }
+        /* button color change on hover */  
+        button:hover {
+            color: white;
+            background-color: #0078d7; 
+        }
+        output {
+            margin-left: 5px;
+        }  
+        label {
+            margin-left: 30px;
+        }  
+        #demo {
+            color: greenyellow;
+            margin-left: 5px;
+            font-weight: bold;
+        }  
+    </style>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <input type="range" name="bpm" id="bpm" min="60" max="200" step="1">
+            <label for="bpm">BPM:</label>
+            <output class="bpm-output" for="bpm"></output>
+            <button onclick="document.getElementById('demo').innerHTML = minute / bpm.value + 'ms'">answer</button>
+        </div>
+        <br />
+        <div class="container">
+            <p>Quater Note = </p>            
+            <p id="demo"></p>
+        </div>
+    </div>
+
+
+    <script>
+        const minute = 60000;
+        const bpm = document.querySelector('#bpm');
+        const output = document.querySelector('.bpm-output');
+
+        output.textContent = bpm.value;
+
+        bpm.addEventListener('input', function() {
+            output.textContent = bpm.value;
+        });
+    </script>
+</body>
+</html>
