@@ -125,6 +125,15 @@
             thirtySecondNote = 1 /8,
         ];
 
+        const DottedTimeDivision = [
+            wholeNote = 4 * 1.5,
+            halfNote = 2 * 1.5,
+            quaterNote = 1 * 1.5,
+            eighthNote = (1 / 2) * 1.5,
+            sixteenthNote = (1 / 4) * 1.5,
+            thirtySecondNote = (1 /8) * 1.5,   
+        ];
+
         output.textContent = bpm.value;
 
         bpm.addEventListener('input', function() {
