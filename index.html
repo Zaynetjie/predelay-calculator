@@ -69,13 +69,13 @@
             <input type="range" name="bpm" id="bpm" min="60" max="200" step="1">
             <label for="bpm">BPM:</label>
             <output class="bpm-output" for="bpm"></output>
-            <button onclick="document.getElementById('demo').innerHTML = minute / bpm.value + 'ms'">answer</button>
+            <button onclick="answer()" type="submit">answer</button>
         </div>
         <br />
         <div class="container">
             <p>Quater Note = </p>            
             <p id="demo"></p>
-        </div>
+        </div>        
     </div>
 
 
@@ -89,6 +89,10 @@
         bpm.addEventListener('input', function() {
             output.textContent = bpm.value;
         });
+
+        function answer() {
+            document.getElementById('demo').innerHTML = minute / bpm.value + 'ms';
+        };
     </script>
 </body>
 </html>
